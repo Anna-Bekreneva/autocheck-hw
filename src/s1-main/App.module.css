@@ -1,0 +1,51 @@
+.App {
+    padding-top: 107px;
+}
+
+.section {
+    padding-bottom: 35px;
+}
+
+.hwTitle {
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1.3;
+    padding-bottom: 10px;
+}
+
+.container {
+    max-width: 1170px;
+    padding: 0 15px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.wrapper {
+    position: relative;
+}
+
+.wrapper::before,
+.wrapper::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 1px;
+    left: 0;
+    background-color: #d9d9d9;
+}
+
+.wrapper::before {
+    top: 0;
+}
+
+.wrapper::after {
+    bottom: 0;
+}
+
+.hw {
+    padding: 24px 0 32px;
+}
+
+#hw1 {
+    font-family: 'Montserrat', 'Roboto', sans-serif;
+}
