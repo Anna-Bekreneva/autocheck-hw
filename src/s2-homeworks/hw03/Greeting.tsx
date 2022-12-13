@@ -38,7 +38,6 @@ const Greeting: React.FC<GreetingPropsType> = (
             </span>
 
             <div className={s.inputAndButtonContainer}>
-                <div className={s.field}>
                     <input
                         id={'hw3-input'}
                         value={name}
@@ -50,7 +49,6 @@ const Greeting: React.FC<GreetingPropsType> = (
                     <div id={'hw3-error'} className={s.error}>
                         {error}
                     </div>
-                </div>
 
                 <button
                     id={'hw3-button'}
