@@ -35,23 +35,22 @@ export const pureAddUserCallback = (name: string, setUsers: (users: Array<UserTy
 const HW3 = () => {
     const [users, setUsers] = useState<Array<UserType>>([]) // need to fix any
 
-    const addUserCallback = (name: string) => pureAddUserCallback(name, setUsers, users)
+    const addUserCallback = (name: string) => {
+        pureAddUserCallback(name, setUsers, users)
+    }
 
     return (
-        <section className={s2.section} id={'hw3'}>
-            <div className={s2.container}>
-                <h2 className={s2.hwTitle}>Homework #3</h2>
-            </div>
+        <div id={'hw3'}>
+            <h2 className={s2.hwTitle}>Homework #3</h2>
             {/*для автоматической проверки дз (не менять)*/}
-            <div className={s2.wrapper}>
-                <div className={`${s2.hw} + ${s2.container}`}>
-                    <GreetingContainer
-                        users={users}
-                        addUserCallback={addUserCallback}
-                    />
-                </div>
+
+            <div className={s2.hw}>
+                <GreetingContainer
+                    users={users}
+                    addUserCallback={addUserCallback}
+                />
             </div>
-        </section>
+        </div>
     )
 }
 

@@ -30,24 +30,26 @@ const Greeting: React.FC<GreetingPropsType> = (
 
     return (
         <div id={'hw3-form'} className={s.greetingForm}>
-            <span className={s.text}>
+            <div className={s.text}>
                 {'Людей добавили: '}
                 <span id={'hw3-users-total'}>
                     {totalUsers}
                 </span>
-            </span>
+            </div>
 
             <div className={s.inputAndButtonContainer}>
-                    <input
-                        id={'hw3-input'}
-                        value={name}
-                        onChange={setNameCallback}
-                        className={inputClass}
-                        onKeyDown={onEnter}
-                        onBlur={onBlur}
-                    />
-                    <div id={'hw3-error'} className={s.error}>
-                        {error}
+                    <div>
+                        <input
+                            id={'hw3-input'}
+                            value={name}
+                            onChange={setNameCallback}
+                            className={inputClass}
+                            onKeyDown={onEnter}
+                            onBlur={onBlur}
+                        />
+                        <div id={'hw3-error'} className={s.error}>
+                            {error}
+                        </div>
                     </div>
 
                 <button
@@ -60,9 +62,9 @@ const Greeting: React.FC<GreetingPropsType> = (
                 </button>
             </div>
 
-            {lastUserName?.trim() && (
+            {lastUserName && (
                 <div className={s.greeting}>
-                    Привет <span id={'hw3-last-user'}>{lastUserName?.trim()}</span>!
+                    Привет <span id={'hw3-last-user'}>{lastUserName}</span>!
                 </div>
             )}
         </div>
