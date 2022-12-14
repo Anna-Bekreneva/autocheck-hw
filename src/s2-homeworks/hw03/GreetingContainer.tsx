@@ -25,7 +25,12 @@ export const pureOnBlur = (name: string, setError: (error: string) => void) => {
     }
 }
 
-export const pureOnEnter = (e: KeyboardEvent, addUser: () => void ) => e.key === 'Enter' && addUser()
+export const pureOnEnter = (e: KeyboardEvent, addUser: () => void ) => { // если нажата кнопка Enter - добавить
+    if (e.key === 'Enter') {
+        addUser()
+    }
+}
+
 
 // более простой и понятный для новичков
 // function GreetingContainer(props: GreetingPropsType) {
@@ -43,10 +48,17 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({
         setName(e.currentTarget.value) // need to fix
         error && setError('')
     }
+    const addUser = () => {
+        pureAddUser(name, setError, setName, addUserCallback)
+    }
 
-    const addUser = () => pureAddUser(name, setError, setName, addUserCallback)
-    const onBlur = () => pureOnBlur(name, setError)
-    const onEnter = (e: KeyboardEvent) => pureOnEnter(e, addUser)
+    const onBlur = () => {
+        pureOnBlur(name, setError)
+    }
+
+    const onEnter = (e: KeyboardEvent) => {
+        pureOnEnter(e, addUser)
+    }
 
     const totalUsers = users.length; // need to fix
     const lastUserName = name.trim() // need to fix
