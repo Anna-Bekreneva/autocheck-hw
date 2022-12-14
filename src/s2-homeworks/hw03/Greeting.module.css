@@ -14,7 +14,8 @@
     margin-bottom: 7px;
 }
 
-.input {
+.input,
+.errorInput {
     border: 1px solid #d1d1d1;
     max-width: 372px;
     width: 100%;
@@ -22,18 +23,18 @@
     transition: border-color 0.4s;
     padding: 8px 12px;
     min-height: 36px;
+    margin-bottom: 7px;
 }
 
 .input:focus {
     border-color: #0066cc;
 }
 
-.input.errorInput {
+.errorInput {
     border-color: #cc0000;
 }
 
 .button {
-    margin-top: 7px;
     border-radius: 3px;
     background-color: #0066cc;
     padding: 8px 24px;
