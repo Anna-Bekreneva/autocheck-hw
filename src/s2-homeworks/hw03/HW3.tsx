@@ -40,17 +40,21 @@ const HW3 = () => {
     }
 
     return (
-        <div id={'hw3'}>
-            <h2 className={s2.hwTitle}>Homework #3</h2>
-            {/*для автоматической проверки дз (не менять)*/}
+        <section className={s2.section} id={'hw3'}>
+            <div className={s2.container}>
+                <h2 className={s2.hwTitle}>Homework #3</h2>
+             </div>
+            <div className={s2.wrapper}>
+                {/*для автоматической проверки дз (не менять)*/}
 
-            <div className={s2.hw}>
-                <GreetingContainer
-                    users={users}
-                    addUserCallback={addUserCallback}
-                />
+                <div className={`${s2.hw} + ${s2.container}`}>
+                    <GreetingContainer
+                        users={users}
+                        addUserCallback={addUserCallback}
+                    />
+                </div>
             </div>
-        </div>
+        </section>
     )
 }
 

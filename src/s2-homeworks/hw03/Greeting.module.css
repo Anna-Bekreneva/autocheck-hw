@@ -17,8 +17,7 @@
 .input,
 .errorInput {
     border: 1px solid #d1d1d1;
-    max-width: 372px;
-    width: 100%;
+    width: 372px;
     margin-right: 12px;
     transition: border-color 0.4s;
     padding: 8px 12px;
