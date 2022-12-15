@@ -1,5 +1,5 @@
 .App {
-    padding-top: 107px;
+    font-family: 'Montserrat', 'Roboto', sans-serif;
 }
 
 .section {
@@ -46,6 +46,14 @@
     padding: 24px 15px 32px;
 }
 
-#hw1 {
-    font-family: 'Montserrat', 'Roboto', sans-serif;
+.header {
+    background-color: #ffffff;
+    box-shadow: 0 0 40px rgba(29, 33, 38, 0.13), 0 0 2px rgba(29, 33, 38, 0.1);
+    margin-bottom: 47px;
+    padding: 14px 0;
+}
+
+.headerWrapper {
+    display: flex;
+    justify-content: space-between;
 }
