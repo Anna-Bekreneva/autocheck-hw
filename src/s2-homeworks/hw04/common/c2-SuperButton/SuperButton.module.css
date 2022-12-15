@@ -8,6 +8,7 @@
     border-radius: 3px;
     border: 0;
     background-color: #0066cc;
+    transition: border-color 0.4s, background-color 0.4s, color 0.4s;
 }
 
 .secondary {
@@ -31,20 +32,28 @@
 }
 
 .secondary:hover {
+    background-color: #e5f0fa;
 }
 
 
 .default:active {
+
 }
 
 .secondary:active {
+    background-color: #c9e5ff;
 }
 
 .red:active {
+    background-color: #b21232;
 }
 
 .button:disabled {
 
+}
+
+.button:hover {
+    background-color: #0059b2;
 }
 
 .disabled {
