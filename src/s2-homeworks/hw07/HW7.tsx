@@ -18,8 +18,8 @@ const arr = [
 ] // value может быть изменено
 
 const HW7 = () => {
-    const [value, onChangeOption] = useState(1) // селект и радио должны работать синхронно
 
+    const [value, onChangeOption] = useState<number>(2) // селект и радио должны работать синхронно
     return (
         <section className={s2.section} id={'hw7'}>
             <div className={s2.container}>
