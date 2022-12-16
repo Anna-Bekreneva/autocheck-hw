@@ -28,7 +28,7 @@ const HW7 = () => {
                 {/*демонстрация возможностей компонент:*/}
                 <div className={`${s2.hw} ${s2.container}`}>
                     <div className={s.container}>
-                        <div>
+                        <div className={s.select}>
                             <SuperSelect
                                 id={'hw7-super-select'}
                                 options={arr}
