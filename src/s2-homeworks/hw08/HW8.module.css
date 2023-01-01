@@ -2,6 +2,16 @@
     position: relative;
 }
 
+.item:not(:last-child)::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    background-color: #e5e5e5;
+    height: 1px;
+    left: 0;
+    bottom: 0;
+}
+
 .users {
     width: 100%;
     border-spacing: 0;
