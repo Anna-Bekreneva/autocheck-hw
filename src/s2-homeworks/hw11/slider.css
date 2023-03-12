@@ -1,0 +1,31 @@
+.MuiSlider-root {
+    max-width: 150px;
+}
+
+.MuiSlider-root:not(:last-child) {
+    margin-right: 13px;
+}
+
+.MuiSlider-rail.css-14pt78w-MuiSlider-rail {
+    background-color: #8B8B8B;
+}
+
+.MuiSlider-thumb {
+    border: 1px solid #00CC22;
+    background-color: transparent !important;
+}
+
+.css-eg0mwd-MuiSlider-thumb:before {
+    position: absolute;
+    content: "";
+    border-radius: inherit;
+    width: 6px !important;
+    height: 6px !important;
+    background-color: #01CB22;
+    box-shadow: 0 0 40px rgba(29, 33, 38, 0.13), 0 0 2px rgba(29, 33, 38, 0.1) !important;
+}
+
+.MuiSlider-track.css-1gv0vcd-MuiSlider-track {
+    background-color: #00CC22;
+    color: #00CC22;
+}
