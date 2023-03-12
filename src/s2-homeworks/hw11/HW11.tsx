@@ -39,6 +39,7 @@ function HW11() {
                             <SuperRange
                                 id={'hw11-single-slider'}
                                 onChangeCommitted={change}
+                                value={value1}
                                 // сделать так чтоб value1 изменялось // пишет студент
 
                             />
@@ -48,6 +49,10 @@ function HW11() {
                             <SuperRange
                                 onChangeCommitted={change}
                                 id={'hw11-double-slider'}
+                                defaultValue={[value1, value2]}
+                                value={[value1, value2]}
+
+                                // value={value1}
                                 // сделать так чтоб value1/2 изменялось // пишет студент
 
                             />
