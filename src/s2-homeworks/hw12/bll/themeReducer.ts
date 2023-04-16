@@ -13,9 +13,7 @@ type stateType = {
 export const themeReducer = (state = initState, action: ActionType): stateType => { // fix any
     switch (action.type) {
         case 'SET_THEME_ID':
-            const result = {...state, themeId: action.id}
-            console.log(result)
-            return result
+            return {...state, themeId: action.id}
 
         default:
             return state
