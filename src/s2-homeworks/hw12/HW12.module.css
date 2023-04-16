@@ -18,6 +18,17 @@ html {
     color: var(--color);
 }
 
+.box {
+    max-width: 170px;
+    width: 100%;
+}
+
+.title {
+    font-size: 14px;
+    display: inline-block;
+    margin-bottom: 8px;
+}
+
 .select {
 
 }
