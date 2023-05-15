@@ -24,7 +24,7 @@ const HW13 = () => {
         const url =
             x === null
                 ? 'https://xxxxxx.ccc' // имитация запроса на не корректный адрес
-                : 'https://incubator-personal-page-back.herokuapp.com/api/3.0/homework/test'
+                : 'https://samurai.it-incubator.io/api/3.0/homework/test'
 
         setCode('')
         setImage('')
@@ -36,78 +36,110 @@ const HW13 = () => {
             .then((res) => {
                 setCode('Код 200!')
                 setImage(success200)
+                setText('...всё ок)\n' +
+                    'код 200 - обычно означает что скорее всего всё ок)')
+                setInfo('')
                 // дописать
 
             })
             .catch((e) => {
                 // дописать
-
+                console.log(e)
+                if (e.request.status === 500) {
+                    setCode('Ошибка 500!')
+                    setText('эмитация ошибки на сервере\n' +
+                        'ошибка 500 - обычно означает что что-то сломалось на сервере, например база данных)')
+                    setImage(error500)
+                } else if (e.request.status === 400) {
+                    setCode('Ошибка 400!')
+                    setText('Ты не отправил success в body вообще!\n' +
+                        'ошибка 400 - обычно означает что скорее всего фронт отправил что-то не то на бэк!')
+                    setImage(error400)
+                } else {
+                    setCode('Error!')
+                    setText('Network Error\n' +
+                        'AxiosError')
+                    setImage(errorUnknown)
+                }
+                setInfo('')
             })
     }
 
     return (
-        <div id={'hw13'}>
-            <div className={s2.hwTitle}>Homework #13</div>
+        <section className={s2.section} id={'hw13'}>
+            <div className={s2.container}>
+                <h2 className={s2.hwTitle}>Homework #13</h2>
+            </div>
 
-            <div className={s2.hw}>
-                <div className={s.buttonsContainer}>
-                    <SuperButton
-                        id={'hw13-send-true'}
-                        onClick={send(true)}
-                        xType={'secondary'}
-                        // дописать
+            <div className={s2.wrapper}>
+                <div className={`${s2.hw} ${s2.container}`}>
+                    <div className={s.buttonsContainer}>
+                        <SuperButton
+                            className={s.button}
+                            id={'hw13-send-true'}
+                            onClick={send(true)}
+                            xType={'secondary'}
+                            disabled={info === '...loading'}
+                            // дописать
 
-                    >
-                        Send true
-                    </SuperButton>
-                    <SuperButton
-                        id={'hw13-send-false'}
-                        onClick={send(false)}
-                        xType={'secondary'}
-                        // дописать
+                        >
+                            Send true
+                        </SuperButton>
+                        <SuperButton
+                            className={s.button}
+                            id={'hw13-send-false'}
+                            onClick={send(false)}
+                            xType={'secondary'}
+                            disabled={info === '...loading'}
+                            // дописать
 
-                    >
-                        Send false
-                    </SuperButton>
-                    <SuperButton
-                        id={'hw13-send-undefined'}
-                        onClick={send(undefined)}
-                        xType={'secondary'}
-                        // дописать
+                        >
+                            Send false
+                        </SuperButton>
+                        <SuperButton
+                            className={s.button}
+                            id={'hw13-send-undefined'}
+                            onClick={send(undefined)}
+                            xType={'secondary'}
+                            disabled={info === '...loading'}
+                            // дописать
 
-                    >
-                        Send undefined
-                    </SuperButton>
-                    <SuperButton
-                        id={'hw13-send-null'}
-                        onClick={send(null)} // имитация запроса на не корректный адрес
-                        xType={'secondary'}
-                        // дописать
+                        >
+                            Send undefined
+                        </SuperButton>
+                        <SuperButton
+                            className={s.button}
+                            id={'hw13-send-null'}
+                            onClick={send(null)} // имитация запроса на не корректный адрес
+                            xType={'secondary'}
+                            disabled={info === '...loading'}
+                            // дописать
 
-                    >
-                        Send null
-                    </SuperButton>
-                </div>
-
-                <div className={s.responseContainer}>
-                    <div className={s.imageContainer}>
-                        {image && <img src={image} className={s.image} alt="status"/>}
+                        >
+                            Send null
+                        </SuperButton>
                     </div>
 
-                    <div className={s.textContainer}>
-                        <div id={'hw13-code'} className={s.code}>
-                            {code}
+                    <div className={s.responseContainer}>
+                        <div className={s.imageContainer}>
+                            {image && <img src={image} className={s.image} alt="status"/>}
                         </div>
-                        <div id={'hw13-text'} className={s.text}>
-                            {text}
-                        </div>
-                        <div id={'hw13-info'} className={s.info}>
-                            {info}
+
+                        <div className={s.textContainer}>
+                            <h3 id={'hw13-code'} className={s.code}>
+                                {code}
+                            </h3>
+                            <p id={'hw13-text'} className={s.text}>
+                                {text}
+                            </p>
+                            <div id={'hw13-info'} className={s.info}>
+                                {info}
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     )
 }
 
