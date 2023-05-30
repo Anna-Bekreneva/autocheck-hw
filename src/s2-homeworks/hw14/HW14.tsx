@@ -35,9 +35,11 @@ const HW14 = () => {
         getTechs(value)
             .then((res) => {
                 // делает студент
-
+                if (res) {
+                    setTechs(res.data.techs)
+                    setLoading(false)
+                }
                 // сохранить пришедшие данные
-
                 //
             })
     }
@@ -47,7 +49,7 @@ const HW14 = () => {
         // делает студент
 
         // добавить/заменить значение в квери урла
-        // setSearchParams(
+        setSearchParams('')
 
         //
     }
@@ -65,24 +67,29 @@ const HW14 = () => {
     ))
 
     return (
-        <div id={'hw14'}>
-            <div className={s2.hwTitle}>Homework #14</div>
-
-            <div className={s2.hw}>
-                <SuperDebouncedInput
-                    id={'hw14-super-debounced-input'}
-                    value={find}
-                    onChangeText={onChangeText}
-                    onDebouncedChange={sendQuery}
-                />
-
-                <div id={'hw14-loading'} className={s.loading}>
-                    {isLoading ? '...ищем' : <br/>}
-                </div>
-
-                {mappedTechs}
+        <section className={s2.section} id={'hw14'}>
+            <div className={s2.container}>
+                <h2 className={s2.hwTitle}>Homework #14</h2>
             </div>
-        </div>
+
+            <div className={s2.wrapper}>
+                <div className={`${s2.hw} ${s2.container}`}>
+                    <SuperDebouncedInput
+                        id={'hw14-super-debounced-input'}
+                        value={find}
+                        onChangeText={onChangeText}
+                        onDebouncedChange={sendQuery}
+                    />
+
+                    <div id={'hw14-loading'} className={s.loading}>
+                        {isLoading ? '...ищем' : <br/>}
+                    </div>
+
+                    {mappedTechs}
+                </div>
+            </div>
+
+        </section>
     )
 }
 
