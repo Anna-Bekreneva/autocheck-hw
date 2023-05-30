@@ -29,10 +29,7 @@ const SuperDebouncedInput: React.FC<SuperDebouncedInputPropsType> = (
     const [timerId, setTimerId] = useState<number | undefined>(undefined)
 
     const onChangeTextCallback = (value: string) => {
-        // onChangeText?.(value)
-        if (onChangeText) {
-            onChangeText(value)
-        }
+        onChangeText?.(value)
 
         if (onDebouncedChange) {
             // делает студент

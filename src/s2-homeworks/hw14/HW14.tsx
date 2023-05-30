@@ -32,10 +32,7 @@ const HW14 = () => {
 
     const sendQuery = (value: string) => {
         setLoading(true)
-
         console.log(value)
-        console.log(find)
-
         getTechs(find)
 
             .then((res) => {
@@ -50,6 +47,7 @@ const HW14 = () => {
     }
 
     const onChangeText = (value: string) => {
+        // console.log(value)
         setFind(value)
         // делает студент
 
