@@ -32,13 +32,11 @@ const HW14 = () => {
 
     const sendQuery = (value: string) => {
         setLoading(true)
-        getTechs(value)
+        getTechs(find)
 
             .then((res) => {
                 // делает студент
                 if (res) {
-                    // console.log(value)
-                    // setTechs(res.data.techs.filter(str => str === value))
                     setTechs(res.data.techs)
                     setLoading(false)
                 }
@@ -52,8 +50,7 @@ const HW14 = () => {
         // делает студент
 
         // добавить/заменить значение в квери урла
-        setSearchParams(find)
-
+        setSearchParams(value)
         //
     }
 
