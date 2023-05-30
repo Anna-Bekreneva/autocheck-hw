@@ -32,6 +32,10 @@ const HW14 = () => {
 
     const sendQuery = (value: string) => {
         setLoading(true)
+
+        console.log(value)
+        console.log(find)
+
         getTechs(find)
 
             .then((res) => {
