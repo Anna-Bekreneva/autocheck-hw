@@ -32,8 +32,6 @@ const HW14 = () => {
 
     const sendQuery = (value: string) => {
         setLoading(true)
-        // getTechs(value)
-        console.log(value)
         getTechs(value)
 
             .then((res) => {
@@ -48,7 +46,6 @@ const HW14 = () => {
     }
 
     const onChangeText = (value: string) => {
-        // console.log(value)
         setFind(value)
         // делает студент
 
@@ -87,7 +84,6 @@ const HW14 = () => {
                     <div id={'hw14-loading'} className={s.loading}>
                         {isLoading ? '...ищем' : <br/>}
                     </div>
-
                     {mappedTechs}
                 </div>
             </div>
