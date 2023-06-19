@@ -3,12 +3,12 @@
     min-height: 24px;
     border-color: #c2c2c2;
     color: #a9a9a9;
+    max-width: 250px;
 }
 
 .select:focus {
     color: #000000;
 }
-
 
 .option:hover {
 }
