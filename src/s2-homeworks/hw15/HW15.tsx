@@ -22,6 +22,7 @@ type TechType = {
 }
 
 const getTechs = (params: any) => {
+    console.log(params)
     return axios
         .get<{ techs: TechType[], totalCount: number }>(
             'https://samurai.it-incubator.io/api/3.0/homework/test3',
@@ -60,7 +61,7 @@ const HW15 = () => {
         setPage(newPage)
         setCount(newCount)
         sendQuery({page: newPage, count: newCount})
-        setSearchParams()
+        setSearchParams({page: page.toString(), count: count.toString()})
     }
 
     const onChangeSort = (newSort: string) => {
@@ -68,7 +69,7 @@ const HW15 = () => {
         setSort(newSort)
         setPage(1) // при сортировке сбрасывать на 1 страницу
         sendQuery({page: 1, count, sort: newSort})
-        setSearchParams()
+        setSearchParams({page: page.toString(), count: count.toString()})
         //
     }
 
